@@ -1,0 +1,21 @@
+input{
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.label>div{
+    display: flex;
+}
+#cadastro-registro{
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+#lista-registro{
+    display: none;
+}
+.label>div>input{
+    flex: 1;
+}
