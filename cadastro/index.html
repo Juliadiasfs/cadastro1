@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Exemplo de cadastro</title>
 </head>
-<body>
+
+<body page="lista">
     <div id="lista-registro">
         <table>
             <thead>
@@ -22,6 +24,7 @@
 
             </tbody>
         </table>
+        <button onclick="visualizar('cadastro')"> Novo Cadastro</button>
     </div>
     <div id="cadastro-registro">
         <div class="label">
@@ -30,20 +33,23 @@
                 <input type="number" name="txtid" id="codigo" placeholder="Digite o código" readonly>
             </div>
         </div>
-    </div>
-    <div class="label">
-        <div>Nome</div>
-        <div>
-            <input type="number" name="txtnome" id="nome" placeholder="Digite o nome">
+        <div class="label">
+            <div>Nome</div>
+            <div>
+                <input type="number" name="txtnome" id="nome" placeholder="Digite o nome">
+            </div>
+        </div>
+        <div class="label">
+            <div>Telefone</div>
+            <div>
+                <input type="number" name="txttelefone" id="telefone" placeholder="Digite o telefone">
+            </div>
         </div>
     </div>
-</div>
-<div class="label">
-    <div>Telefone</div>
     <div>
-        <input type="number" name="txttelefone" id="telefone" placeholder="Digite o telefone">
+        <button>Salvar</button>
+        <button onclick="visualizar('lista')" class="cinza">Cancelar</button>
     </div>
-</div>
-</div>
 </body>
+ <script src="js/main.js"></script>
 </html>
