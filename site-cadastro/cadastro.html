@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="style.css">
+   <title>Cadastro - </title>
+</head>
+
+</html>
+
+<body page="login" onload="initializePage()">
+   <header id="header">
+      <div class="header-left">
+         <img src="/img/logo.png" class="logo" />
+      </div>
+      <div class="header-right">
+         <a id="sobre" href="sobre.html">Sobre</a>
+         <a id="home" href="index.html">Home</a>
+      </div>
+   </header>
+   <!DOCTYPE html>
+   <html lang="pt-br">
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="style.css">
+      <title>Cadastro - </title>
+   </head>
+
+   </html>
+
+   <body page="login" onload="initializePage()">
+      <header id="header">
+         <div class="header-left">
+            <img src="/img/logo.png" class="logo" />
+         </div>
+         <div class="header-right">
+            <a id="sobre" href="sobre.html">Sobre</a>
+            <a id="home" href="index.html">Home</a>
+         </div>
+      </header>
+         <main class="container">
+         <div id="cadastro-registro">
+            <form id="forms-cadastro">
+            
+                  <div class="itens">
+                     <label for="tusuario">Nome:</label>
+                     <input id="tusuario" type="text" size="30" name="txtusuario"
+                        placeholder="Digite seu nome de usuário" /><br>
+
+                     <label for="temail">Email:</label>
+                     <input type="text" id="temail" size="30" name="txtemail" required
+                        placeholder="Digite seu email" /><br>
+
+                     <label for="tsenha1">Senha:</label>
+                     <input type="password" id="tsenha1" size="8" required placeholder="Digite sua senha" /><br>
+
+                     <label for="tsenha2">Confirmar Senha:</label>
+                     <input type="password" id="tsenha2" size="8" required placeholder="Confirme sua senha" /><br>
+                  </div>
+                  <div class="btn">
+                     <button type="button" onclick="previousStep()" name="btnvoltar" disabled>Voltar</button>
+                     <button type="button" onclick="nextStep()" name="btncontinua">Próximo</button>
+                  </div>
+
+                     <button type="button" onclick="redirecionar()" name="btncadastra">Cadastrar</button>
+                  </div> 
+            </form>
+            <div class="itens">
+               <p>Já é cadastrado?<a onclick="visualizar('login')">Logue-se</a></p>
+            </div>
+         
+
+         <div id="lista-registro">
+            <div class="itens">
+               <table>
+                  <thead>
+                     <tr>
+                        <th>ID</th>
+                        <th>Usuário</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th>Nome Completo</th>
+                        <th>Telefone</th>
+                        <th>Sexo</th>
+                        <th>Linguagens</th>
+                     </tr>
+                  </thead>
+                  <tbody id="listaRegistroBody">
+                  </tbody>
+               </table>
+            </div>
+            <div class="btn">
+               <button type="button" onclick="visualizar('cadastro', true)"> Novo Cadastro</button>
+            </div>
+
+         </div>
+
+         <div id="login">
+            <form id="forms-login">
+               <div class="itens">
+                  <label for="emailLogin">Email:</label>
+                  <input type="text" size="30" id="emailLogin" name="txtemail" placeholder="Digite seu email"
+                     required><br>
+
+                  <label for="senhaLogin">Senha:</label>
+                  <input type="password" size="8" id="senhaLogin" placeholder="Digite sua senha" required><br>
+               </div>
+               <div class="btn">
+                  <button type="button" name="btncadastra" onclick="fazerLogin()">Entrar</button>
+               </div>
+               <div class="itens">
+                  <p>Novo por aqui?<a onclick="visualizar('cadastro')">Cadastre-se</a></p>
+               </div>
+            </form>
+         </div>
+
+
+
+      </main>
+
+
+
+      <script src="/js/cadastro.js"></script>
+   </body>

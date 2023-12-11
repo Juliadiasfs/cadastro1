@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+
+/* #FDB3CA - Rosa
+#A9DFE2 - Verde água
+#5C6898 - Roxo escuro
+#D1D5FA - Lavanda
+#FFFFFF - Branco */
+
+* {
+    font-family: 'inter', sans-serif;
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+/*Cabeçalho*/
+
+header {
+    overflow: hidden;
+    background-color: #5C6898;
+    padding: 25px 10px;
+}
+
+header img {
+    width: 250px;
+    height: auto;
+}
+
+.header-right a {
+    float: left;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 10px;
+    border-radius: 10px;
+    transition: all 0.8s;
+    margin: 0px 5px;
+}
+
+.header-right a:hover {
+    background-color: #A9DFE2;
+    color: #5C6898;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-left a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-left a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.header-left a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/**/
+
+h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: normal;
+    height: 80hv;
+    color: #5C6898;
+}
+
+#cadastro-registro {
+    display: none;
+}
+.container {
+    padding: 20vh;
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.349);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    padding: 1.5rem;
+    width: 400px;
+}
+
+form label {
+    margin-top: 0.5rem;
+}
+
+input,
+button {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5rem;
+    border-color: #0000003d;
+}
+
+.btn {
+    margin: 10px 50px;
+    display: -moz-inline-box;
+    text-align: center;
+}
+
+form button {
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #5C6898, #A9DFE2);
+    color: #ffffff;
+    border: none;
+    border-radius: 100px;
+    padding: 10px;
+    margin: 20px 10px 10px 20px;
+    transition: all 0.4s;
+}
+
+form button:hover {
+    background-image: linear-gradient(90deg, #A9DFE2, #5C6898);
+    transition: all 0.4s;
+}
+
+form fieldset {
+    padding: 0.5rem;
+    border-color: #0000003d;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#step2,
+#step3 {
+    display: none;
+}
+
+#step3 .itens{
+    display: grid;
+    margin-top: 60px;
+}
+
+#lista-registro {
+    display: none;
+}
+
+#lista-registro button{
+    padding: 0.5rem;
+    margin-top: 10px;
+    border-color: #0000003d;
+    border-radius: 100px;
+}
+
+table{
+    border: solid 1px #5C6898;
+    border-radius: 75px;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #5c68987c;
+    font-weight: bold;
+}
+
+td, th{
+    border: 2px solid #5C6898;
+    padding: 5px 30px;
+}
+
+#login{
+    display: none;
+}
+
+body[page=lista] #lista-registro {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body[page=cadastro] #cadastro-registro {
+    display: block;
+}
+
+body[page=login] #login {
+    display: block;
+}
+/*Rodapé da Página*/
+
+footer {
+    width: 100%;
+    background: #5C6898;
+}
+
+.footer-link {
+    text-decoration: none;
+}
+
+#footer_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1%;
+    color: #ffffff;
+}
+
+#footer_content p,
+.footer-list .footer-link {
+    color: rgba(255, 255, 255, 0.788);
+    ;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 0.75rem;
+}
+
+#footer_contacts img {
+    max-width: 250px;
+}
+
+#footer_social_media {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#footer_social_media .footer-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#footer_social_media .footer-link:hover {
+    opacity: 0.8;
+}
+
+#footer_social_media .footer-link i {
+    font-size: 1.25rem;
+}
+
+#instagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#facebook {
+    background-color: #4267b3;
+}
+
+#whatsapp {
+    background-color: #23d366;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.footer-list .footer-link {
+    transition: all 0.4s;
+}
+
+#footer_subscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#footer_subscribe p {
+    color: gray;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+#input_group input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#input_group button {
+    background-color: #A9DFE2;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.125rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#input_group button:hover {
+    opacity: 0.8;
+}
+
+#footer_copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: #ffffff;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1%;
+    }
+}
+
+/*teste */
