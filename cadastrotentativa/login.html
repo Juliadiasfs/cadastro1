@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Login</title>
+</head>
+<body>
+    <header id="header">
+        <div class="header-left">
+            <img src="imagens/logo.png" class="logo" />
+        </div>
+        <div class="header-right">
+            <ul class="links">
+                <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Início</a></li>
+                <li class="rd-nav-item"><a class="rd-nav-link" href="cadastro.html">Sobre Nós</a></li>
+                <li class="rd-nav-item"><a class="rd-nav-link" href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" minlength="8" required>
+    
+            <button type="button" onclick="realizarLogin()">Login</button>
+        </form>
+    </section>
+</body>
+</html>
