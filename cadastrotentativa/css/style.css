@@ -16,6 +16,11 @@
 
 #lista-registro {
     display: none;
+    color: black; 
+}
+
+#login {
+    display: none;
 }
 
 .label>div>input {
@@ -27,6 +32,10 @@ body[page=lista] #lista-registro {
 }
 
 body[page=cadastro] #cadastro-registro {
+    display: block;
+}
+
+body[page=login] #login {
     display: block;
 }
 
@@ -44,6 +53,7 @@ table th,
 table td {
     padding: 10px 15px;
     border: 1px solid #ccc;
+    color: black;
 }
 
 button {
@@ -112,10 +122,9 @@ footer {
 }
 
 section {
-margin-top: 5%;
-margin-left: 40%;
+    margin-top: 5%;
+    margin-left: 40%;
     max-width: 400px;
-   
     background-color: black;
     padding: 20px;
     border-radius: 8px;
@@ -155,11 +164,13 @@ button {
     cursor: pointer;
 }
 
+
+
 button:hover {
     background-color: #0056b3;
 }
 
-.itens{
+.itens {
     color: white;
     text-align: center;
     margin-top: 10px;

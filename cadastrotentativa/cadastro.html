@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="py-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,17 +27,17 @@
             <h2>Cadastro</h2>
             <form id="forms-cadastro">
                 <div class="itens">
-                    <label for="tusuario">Nome:</label>
-                    <input id="tusuario" type="text" size="30" name="txtusuario" placeholder="Digite seu nome de usuário" /><br>
+                    <label for="tnome">Nome:</label>
+                    <input id="tnome" name="tnome" type="text" size="30" name="txtnome" placeholder="Digite seu nome de usuário" /><br>
 
                     <label for="temail">Email:</label>
-                    <input type="text" id="temail" size="30" name="txtemail" required placeholder="Digite seu email" /><br>
+                    <input type="text" id="temail" name="temail" size="30" name="txtemail" required placeholder="Digite seu email" /><br>
 
                     <label for="tsenha1">Senha:</label>
-                    <input type="password" id="tsenha1" size="8" required placeholder="Digite sua senha" /><br>
+                    <input type="password" id="tsenha1" name="tsenha1" size="8" required placeholder="Digite sua senha" /><br>
 
                     <label for="tsenha2">Confirmar Senha:</label>
-                    <input type="password" id="tsenha2" size="8" required placeholder="Confirme sua senha" /><br>
+                    <input type="password" id="tsenha2" name="tsenha2" size="8" required placeholder="Confirme sua senha" /><br>
                 </div>
                 <button type="button" onclick="redirecionar()" name="btncadastra">Cadastrar</button>
                 <div class="itens">
@@ -54,7 +53,6 @@
             <form id="loginForm">
                 <label for="email">E-mail:</label>
                 <input type="text" size="30" id="emailLogin" name="txtemail" placeholder="Digite seu email" required><br>
-
                 <label for="senha">Senha:</label>
                 <input type="password" size="8" id="senhaLogin" placeholder="Digite sua senha" required><br>
                 <div class="btn">
@@ -73,10 +71,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Usuário</th>
-                        <th>Email</th>
-                        <!-- <th>Senha</th> REMOVIDO PARA NÃO EXIBIR SENHA -->
                         <th>Nome</th>
+                        <th>Email</th>
+                        <th>Senha</th>
                     </tr>
                 </thead>
                 <tbody id="listaRegistroBody">

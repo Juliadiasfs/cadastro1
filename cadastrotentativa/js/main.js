@@ -1,44 +1,51 @@
+
+let tentativas = 0;
+const limiteTentativas = 3;
+
 let listaRegistro = {
     ultimoIdGravado: 0,
-    pessoas: [{ id: 10, email: "debora@gmail.com", nome: "Debora Antunes",}]
+    pessoas: [{ id: 10, email: "debora@gmail.com", nome: "Debora Antunes"}]
 };
 
-let tentativas = 0; 
 function validarFormulario() {
-    let usuario = document.getElementById('tusuario').value;
-    let email = document.getElementById('temail').value;
-    let senha = document.getElementById('tsenha1').value;
-    let senha2 = document.getElementById('tsenha2').value;
+        // Validação para a primeira etapa
+        let usuario = document.getElementById('tnome').value;
+        let email = document.getElementById('temail').value;
+        let senha = document.getElementById('tsenha1').value;
+        let senha2 = document.getElementById('tsenha2').value;
 
-    if (usuario === "" || email === "" || senha === "" || senha2 === "") {
-        alert("Por favor, preencha todos os campos na primeira etapa.");
-        return false;
+        if (usuario === "" || email === "" || senha === "" || senha2 === "") {
+            alert("Por favor, preencha todos os campos na primeira etapa.");
+            return false;
+        }
+
+        //validação do email
+        let emailPadrao = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if(!email.match(emailPadrao)){
+            alert("Por favor digite um e-mail válido");
+            return false;
+        }
+
+        const emailExistente = listaRegistro.pessoas.some(pessoa => pessoa.email === email);
+        if (emailExistente) {
+            alert("Este email já está cadastrado. Por favor, use um email diferente.");
+            return false;
+        }
+
+        //validação da senha (mínimo 8 caracteres)
+        if(senha.length < 8 ){
+            alert("A senha deve ter no minimo 8 caracteres");
+            return false;
+        }
+        //verificando se as duas senhas são iguais
+        if(senha !== senha2){
+            alert("As senhas não coincidem. Por favor, tente novamente");
+            return false;
+        }
+
+        return true
+
     }
-
-    let emailPadrao = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!email.match(emailPadrao)) {
-        alert("Por favor digite um e-mail válido");
-        return false;
-    }
-
-    const emailExistente = listaRegistro.pessoas.some(pessoa => pessoa.email === email);
-    if (emailExistente) {
-        alert("Este email já está cadastrado. Por favor, use um email diferente.");
-        return false;
-    }
-
-    if (senha.length < 8) {
-        alert("A senha deve ter no mínimo 8 caracteres");
-        return false;
-    }
-
-    if (senha !== senha2) {
-        alert("As senhas não coincidem. Por favor, tente novamente");
-        return false;
-    }
-
-    return true;
-}
 
 function desenharTabela() {
     const tbody = document.getElementById("listaRegistroBody");
@@ -46,32 +53,28 @@ function desenharTabela() {
         tbody.innerHTML = listaRegistro.pessoas.map(pessoa => {
             return `<tr>
                 <td>${pessoa.id}</td>
-                <td>${pessoa.email}</td>
                 <td>${pessoa.nome}</td>
+                <td>${pessoa.email}</td>
+                <td>${pessoa.senha}</td>
             </tr>`;
         }).join('');
     }
 }
 
-function inserirPessoa( email, senha, nome) {
+function inserirPessoa(email, senha, nome) {
     let novoID = listaRegistro.pessoas.length + 1;
     let userData = {
         id: novoID,
-        usuario: usuario,
         email: email,
         senha: senha,
-        nome: nome,
-        telefone: telefone,
-        sexo: sexo,
-        linguagens: linguagens.join(', ')
+        nome: nome
     };
     listaRegistro.pessoas.push(userData);
-    localStorage.setItem('listaRegistro', JSON.stringify(listaRegistro));
+    localStorage.setItem('pessoa', JSON.stringify(listaRegistro));
     desenharTabela();
 }
 
 function limparDados() {
-
     document.getElementById('temail').value = '';
     document.getElementById('tsenha1').value = '';
     document.getElementById('tsenha2').value = '';
@@ -85,19 +88,17 @@ function visualizar(pagina, novo = false) {
             limparDados();
             limparLocalStorage();
         }
-        document.getElementById("tusuario").focus();
+        document.getElementById("tnome").focus();
     }
 }
 
 function enviarDados() {
     if (validarFormulario()) {
-
         const email = document.getElementById('temail').value;
         const senha = document.getElementById('tsenha1').value;
         const nome = document.getElementById('tnome').value;
 
-
-        inserirPessoa(email, senha, nome);
+        inserirPessoa( email, senha, nome);
 
         limparDados();
         visualizar('lista');
@@ -105,11 +106,11 @@ function enviarDados() {
 }
 
 function limparLocalStorage() {
-    localStorage.removeItem("listaRegistro");
+    localStorage.removeItem("pessoa");
 }
 
 function lerBD() {
-    const lista = localStorage.getItem("listaRegistro");
+    const lista = localStorage.getItem("pessoa");
     if (lista) {
         listaRegistro = JSON.parse(lista);
         desenharTabela();
@@ -123,7 +124,7 @@ function fazerLogin() {
     const usuarioEncontrado = listaRegistro.pessoas.find(usuario => usuario.email === emailLogin);
 
     if (usuarioEncontrado) {
-        if (usuarioEncontrado.senha === senhaLogin) {
+        if(usuarioEncontrado.senha === senhaLogin) {
             alert('Login bem-sucedido!');
             tentativas = 0;
             visualizar('lista');
@@ -132,6 +133,7 @@ function fazerLogin() {
 
             if (tentativas === limiteTentativas) {
                 alert('Você atingiu o limite de tentativas. Por favor, tente novamente mais tarde.');
+
             } else {
                 alert(`Senha incorreta. Tentativa ${tentativas}/${limiteTentativas}.`);
             }
@@ -141,9 +143,10 @@ function fazerLogin() {
     }
 }
 
+
 function redirecionar() {
     if (validarFormulario()) {
-        visualizar('lista');
+        visualizar('login');
     }
 }
 
@@ -152,5 +155,8 @@ function initializePage() {
     desenharTabela();
     document.querySelector('button[name="btncadastra"]').addEventListener('click', enviarDados);
 }
+
 window.onload = initializePage;
+
+console.log(document.getElementById('tnome').value);
 
