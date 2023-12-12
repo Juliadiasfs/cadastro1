@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.label>div {
+    display: flex;
+}
+
+#cadastro-registro {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#lista-registro {
+    display: none;
+    color: black;
+}
+
+#login {
+    display: none;
+}
+
+.label>div>input {
+    flex: 1;
+}
+
+body[page=lista] #lista-registro {
+    display: block;
+}
+
+body[page=cadastro] #cadastro-registro {
+    display: block;
+}
+
+body[page=login] #login {
+    display: block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #07a;
+    color: #fff;
+    margin: 3px;
+    padding: 10px 15px;
+}
+
+button:hover {
+    opacity: 0.8;
+
+}
+
+button.cinza {
+    background-color: #ccc;
+    color: #666;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    padding: 30px;
+    color: white;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.links li {
+    margin-right: 15px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Adicione um estilo para a seção de cadastro */
+#forms-cadastro {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+/* Estilo para os rótulos dos campos */
+#forms-cadastro label {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+/* Estilo para os campos de entrada */
+#forms-cadastro input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Estilo para o botão de cadastrar */
+#forms-cadastro button {
+    background-color: #9B5235;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+}
+
+/* Estilo para o link de login */
+#forms-cadastro a {
+    color: #cc5e32;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* Estilo para a mensagem de já cadastrado */
+#forms-cadastro p {
+    margin-top: 15px;
+}
+
+/* Estilo para a seção de cadastro como um todo */
+section {
+    margin-top: 50px;
+}
+
+/* Estilo para a mensagem de já cadastrado */
+#forms-cadastro p {
+    margin-top: 15px;
+}
+
+/* Adicione um estilo para o rodapé */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+/* Adicione um estilo para a seção de login */
+#loginForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+
+}
+
+/* Estilo para os rótulos dos campos */
+#loginForm label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilo para os campos de entrada */
+#loginForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.button-container {
+    text-align: center;
+}
+
+#loginForm button {
+    background-color: #9B5235;
+    ;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 130px;
+    width: 150px;
+}
+
+#loginForm a {
+    color: #cc5e32;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+#loginForm p {
+    margin-top: 15px;
+}
+
+#lista-registro {
+    max-width: 800px;
+    margin: 0 auto;
+
+    border-radius: 5px;
+    background-color: #fff;
+
+}
+
+#lista-registro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+}
+
+#lista-registro table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#lista-registro th,
+#lista-registro td {
+    border: 1px solid rgb(34, 32, 32);
+    padding: 8px;
+    text-align: left;
+}
+
+#lista-registro th {
+    background-color: #9B5235;
+    ;
+    color: #fff;
+}
+
+#lista-registro button {
+    background-color: #9B5235;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#lista-registro button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 30px;
+    background-color: black;
+    color: white;
+}
+
+.itens {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#valenca {
+    max-width: 300%;
+    height: auto;
+    max-height: 450px;
+    display: flex;
+    margin-left: 500px;
+}
+
+.section-lg {
+    padding: 70px 0;
+}
+
+h3 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.row-40 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-modern {
+    flex: 0 0 calc(25% - 30px);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-modern img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+
+}
+
+.team-modern-name {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.team-modern-status {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.team-modern-social-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.team-modern-social-list li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.team-modern-social-list a {
+    color: #333;
+    font-size: 18px;
+}
+
+#sobre {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 2000px;
+    max-height: 500px ;
+    color: black;
+    text-align: center;
+    margin:0;
+}
+
+
+
+#sobre a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+#sobre a:hover {
+    color: #0056b3;
+}
+
+
